@@ -1,6 +1,11 @@
 package linkedlist;
 
-public class LinkedList {
+interface LinkedListInterface {
+    boolean isEmpty();
+    void emptyList();
+}
+
+public class LinkedList implements LinkedListInterface {
     ListNode header;
 
     public LinkedList(ListNode node) {
@@ -13,6 +18,14 @@ public class LinkedList {
 
     public boolean linkedListIsEmpty() {
         return header.next == null;
+    }
+
+    public boolean isEmpty() {
+        return header.next == null;
+    }
+
+    public void emptyList() {
+        header.next = null;
     }
 
     public void clearLinkedList() {
